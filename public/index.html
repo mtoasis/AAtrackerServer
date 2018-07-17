@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>AA tracker Server Page</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+<body>
+    <h1>Welcome to AA tracker Server</h1>
+
+    <p>
+        <label>Title</label>
+        <input type="text" id="titleInput">
+        <label>User</label>
+        <input type="text" id="userInput">
+        <label>Content</label>
+        <input type="text" id="contentInput">
+
+    </p>
+
+    <p>
+
+        <button id="submitButton">Submit</button>
+    </p>
+
+    <script>
+
+        $("#submitButton").on("click", () => {
+
+            const postData = {
+                title: $("#titleInput").val(),
+                userID: $("#userInput").val(),
+                schedule: {1:[$("#contentInput").val()]}
+            }
+
+            $.ajax({
+                url: "/api/posts",
+                type: 'POST',
+                data: postData
+            }).then(function (data) {
+                console.log(postData)
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -173,6 +173,8 @@
 
         $("#loadSurvey").on("click", () => {
 
+            $("#currentSurvey").empty()
+
             $.ajax({
                 url: "/api/survey",
                 type: 'GET',

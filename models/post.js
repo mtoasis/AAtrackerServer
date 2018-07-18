@@ -6,6 +6,7 @@ const postSchema = new Schema({
   userID: { type: String, required: true },
   name: {type: String, required: true},
   schedule: { type: Array, required: true },
+  surveyQA:{type:Object, required: true}
 });
 
 const Post = mongoose.model("Post", postSchema);

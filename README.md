@@ -1,4 +1,0 @@
-# SchoolPool
-
-
-Ryan's branch
